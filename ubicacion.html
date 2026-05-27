@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Adiestramiento Canino | Kennel Club Santa Fe</title>
+  <meta name="description" content="Adiestramiento Canino Kennel Club Santa Fe. Cursos, obediencia, socialización y actividades para perros y familias." />
+  <link rel="icon" type="image/png" href="https://github.com/MatiasH2804/Kennel-Club-Santa-Fe-Web/blob/main/logo%20kennel.png?raw=true" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    body{
+      font-family:'Inter',sans-serif;
+      background:#0b0b0b;
+      color:white;
+      min-height:100vh;
+
+      background-image:
+      radial-gradient(circle at top left, rgba(179,18,23,0.22), transparent 28%),
+      linear-gradient(
+        0deg,
+        rgba(255,255,255,0.03) 1px,
+        transparent 1px
+      ),
+      linear-gradient(
+        90deg,
+        rgba(255,255,255,0.03) 1px,
+        transparent 1px
+      );
+
+      background-size:
+      auto,
+      80px 80px,
+      80px 80px;
+    }
+
+    .wrapper{
+      width:min(1200px, calc(100% - 40px));
+      margin:auto;
+      padding:80px 0;
+    }
+
+    .location-card{
+
+      background:rgba(255,255,255,0.04);
+
+      border:1px solid rgba(255,255,255,0.08);
+
+      border-radius:34px;
+
+      padding:45px;
+
+      backdrop-filter:blur(20px);
+
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:40px;
+
+      margin-bottom:40px;
+    }
+
+    .eyebrow{
+      color:#d0d0d0;
+      font-size:0.8rem;
+      font-weight:800;
+      letter-spacing:0.14em;
+      text-transform:uppercase;
+
+      margin-bottom:18px;
+    }
+
+    h1{
+      font-size:4rem;
+      line-height:0.95;
+      margin-bottom:25px;
+      font-weight:900;
+    }
+
+    .location-card p{
+      color:#c7c7c7;
+      font-size:1.15rem;
+      margin-bottom:16px;
+      max-width:700px;
+    }
+
+    /* BOTÓN */
+
+    .map-btn-wrapper {
+      --btn-color: #b31217;
+      --text-color: #fff;
+      --land-color: #ffdd9f;
+      --veg-color: #36ad5aa9;
+      --water-color: #b3e3ff;
+      --transition-dur: 0.3s;
+
+      position: relative;
+      display: flex;
+
+      font-size: 16px;
+      font-family: "Inter", sans-serif;
+
+      user-select: none;
+      overflow: hidden;
+      border-radius: 50ch;
+
+      transition: transform var(--transition-dur) ease;
+    }
+
+    .map-btn {
+      cursor: pointer;
+      padding: 1em 1.8em 1em 3.8em;
+
+      border-radius: 50ch;
+
+      background-color: var(--btn-color);
+
+      font-weight: 700;
+      color: var(--text-color);
+
+      transition: 0.3s;
+    }
+
+    .pinpoint {
+      pointer-events: none;
+      position: absolute;
+      height: 60%;
+      aspect-ratio: 1;
+      top: 20%;
+      left: 0.75em;
+
+      border-radius: 50%;
+      background-color: white;
+
+      transform: rotateZ(45deg);
+
+      mask-image: radial-gradient(circle at center, #0000 0%, #0000 32%, #fff 36%);
+    }
+
+    .map-container {
+      pointer-events: none;
+
+      position: absolute;
+
+      left: 0px;
+      top: 115px;
+
+      perspective: 120px;
+
+      transform: perspective(120px) rotateX(35deg) scaleX(0);
+
+      transform-origin: 3em 0.5em;
+
+      transition: 0.3s;
+
+      opacity: 0;
+    }
+
+    .map {
+      position: absolute;
+      bottom: 100px;
+
+      width: 120px;
+      height: 200px;
+
+      background-color: var(--water-color);
+
+      transform-origin: left bottom;
+    }
+
+    .map::after {
+      content: "";
+
+      width: 100%;
+      height: 200%;
+
+      background-color: var(--land-color);
+
+      position: absolute;
+
+      filter: url(#land);
+
+      box-shadow: inset 0 0 48px 24px var(--veg-color);
+    }
+
+    .fold-1 {
+      left: -60px;
+      transform: rotateY(10deg) translateZ(30px);
+    }
+
+    .fold-2 {
+      left: 60px;
+      transform: rotateY(-10deg) translateZ(10px);
+    }
+
+    .fold-3 {
+      left: -169px;
+      transform: rotateY(-15deg) translateZ(-1px);
+    }
+
+    .fold-4 {
+      left: 166px;
+      transform: rotateY(15deg) translateZ(31px);
+    }
+
+    .map-btn-wrapper:hover{
+      transform:scale(1.05);
+    }
+
+    .map-btn-wrapper:hover .map-container{
+      transform: perspective(100px) rotateX(35deg) scaleX(0.85);
+
+      opacity:1;
+    }
+
+    .map-btn-wrapper:hover .map-btn{
+      background:white;
+      color:#b31217;
+    }
+
+    /* GOOGLE MAPS */
+
+    .maps-frame{
+
+      margin-top:30px;
+
+      overflow:hidden;
+
+      border-radius:34px;
+
+      border:1px solid rgba(255,255,255,0.08);
+
+      background:black;
+    }
+
+    iframe{
+      width:100%;
+      height:650px;
+      border:none;
+      display:block;
+    }
+
+    @media(max-width:900px){
+
+      .location-card{
+        flex-direction:column;
+        align-items:flex-start;
+      }
+
+      h1{
+        font-size:2.6rem;
+      }
+
+      iframe{
+        height:500px;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <div class="wrapper">
+
+    <section class="location-card">
+
+      <div>
+
+        <p class="eyebrow">
+          Ubicación
+        </p>
+
+        <h1>
+          Visitá el Kennel Club Santa Fe
+        </h1>
+
+        <p>
+          Pedro Vittori 4330, S3002 Santa Fe de la Vera Cruz, Santa Fe.
+        </p>
+
+        <p>
+          Cursos de adiestramiento, actividades oficiales, exposiciones y encuentros caninos.
+        </p>
+
+      </div>
+
+      <a
+        href="https://maps.google.com/?q=Pedro+Vittori+4330+Santa+Fe"
+        target="_blank"
+        class="map-btn-wrapper"
+      >
+
+        <svg height="0" width="0">
+
+          <filter id="land">
+
+            <feTurbulence
+              result="turb"
+              numOctaves="7"
+              baseFrequency="0.006"
+              type="fractalNoise"
+            ></feTurbulence>
+
+            <feDisplacementMap
+              yChannelSelector="G"
+              xChannelSelector="R"
+              scale="700"
+              in="SourceGraphic"
+              in2="turb"
+            ></feDisplacementMap>
+
+          </filter>
+
+        </svg>
+
+        <div class="map-btn">
+          Pedro Vittori 4330
+        </div>
+
+        <div class="pinpoint"></div>
+
+        <div class="map-container">
+
+          <div class="map fold-1"></div>
+          <div class="map fold-2"></div>
+          <div class="map fold-3"></div>
+          <div class="map fold-4"></div>
+
+        </div>
+
+      </a>
+
+    </section>
+
+    <!-- GOOGLE MAPS -->
+
+    <section class="maps-frame">
+
+      <iframe
+        src="https://www.google.com/maps?q=Pedro+Vittori+4330+Santa+Fe&output=embed"
+        loading="lazy">
+      </iframe>
+
+    </section>
+
+  </div>
+
+</body>
+</html>

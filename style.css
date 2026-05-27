@@ -1,0 +1,962 @@
+:root {
+  --bg: #111111;
+  --bg-soft: #171717;
+  --card: rgba(255, 255, 255, 0.075);
+  --card-strong: rgba(255, 255, 255, 0.12);
+  --text: #f7f7f7;
+  --muted: #b9b9b9;
+  --line: rgba(255, 255, 255, 0.14);
+  --accent: #f45d5d;
+  --accent-dark: #c92822;
+  --max-width: 1180px;
+  --radius: 24px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.6;
+}
+
+.page-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background-color: #111111;
+  background-image:
+    radial-gradient(circle at top left, rgba(244, 93, 93, 0.18), transparent 34%),
+    linear-gradient(32deg, rgba(8, 8, 8, 0.74) 30px, transparent);
+  background-size: auto, 60px 60px;
+  background-position: center, -5px -5px;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  backdrop-filter: blur(18px);
+  background: rgba(17, 17, 17, 0.76);
+  border-bottom: 1px solid var(--line);
+}
+
+.navbar {
+  width: min(var(--max-width), calc(100% - 32px));
+  margin: 0 auto;
+  min-height: 74px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  font-size: 1.1rem;
+}
+
+.brand-mark {
+  width: 38px;
+  height: 38px;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  color: #111111;
+  background: linear-gradient(135deg, var(--accent), #fff1b8);
+  box-shadow: 0 10px 30px rgba(244, 201, 93, 0.18);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.nav-links a {
+  color: var(--muted);
+  padding: 9px 12px;
+  border-radius: 999px;
+  font-size: 0.94rem;
+  transition: 0.2s ease;
+}
+
+.nav-links a:hover,
+.nav-links .nav-cta {
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.09);
+}
+
+.section-shell {
+  width: min(var(--max-width), calc(100% - 32px));
+  margin: 0 auto;
+}
+
+.hero {
+  min-height: 620px;
+  padding: 84px 0 60px;
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(300px, 0.6fr);
+  gap: 28px;
+  align-items: center;
+}
+
+.eyebrow {
+  margin: 0 0 12px;
+  color: var(--accent);
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+
+h1 {
+  max-width: 840px;
+  margin-bottom: 18px;
+  font-size: clamp(2.45rem, 7vw, 5.6rem);
+  line-height: 0.95;
+  letter-spacing: -0.075em;
+}
+
+.hero-text {
+  max-width: 680px;
+  color: var(--muted);
+  font-size: clamp(1rem, 2vw, 1.18rem);
+}
+
+.hero-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+.btn,
+button {
+  border: 0;
+  cursor: pointer;
+  font: inherit;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  padding: 0 18px;
+  border-radius: 999px;
+  font-weight: 700;
+}
+
+.btn.primary {
+  color: #111111;
+  background: var(--accent);
+}
+
+.btn.secondary {
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.09);
+  border: 1px solid var(--line);
+}
+
+.hero-card,
+.post-card,
+.side-card,
+.about-section {
+  border: 1px solid var(--line);
+  background: var(--card);
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.24);
+  backdrop-filter: blur(18px);
+}
+
+.hero-card {
+  min-height: 330px;
+  padding: 28px;
+  border-radius: var(--radius);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.card-label {
+  width: fit-content;
+  margin-bottom: 18px;
+  padding: 7px 10px;
+  border-radius: 999px;
+  color: #111111;
+  background: var(--accent);
+  font-size: 0.78rem;
+  font-weight: 800;
+}
+
+.hero-card h2 {
+  margin-bottom: 10px;
+  font-size: 1.55rem;
+  line-height: 1.08;
+}
+
+.hero-card p,
+.post-card p,
+.side-card p,
+.about-section p {
+  color: var(--muted);
+}
+
+.hero-card a,
+.read-more {
+  color: var(--accent);
+  font-weight: 800;
+}
+
+.content-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 330px;
+  gap: 28px;
+  padding: 38px 0 72px;
+  align-items: start;
+}
+
+.section-heading {
+  margin-bottom: 20px;
+}
+
+.section-heading h2,
+.about-section h2 {
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  line-height: 1;
+  letter-spacing: -0.05em;
+}
+
+.post-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.post-card {
+  padding: 24px;
+  border-radius: 22px;
+}
+
+.featured-post {
+  margin-bottom: 18px;
+  padding: 30px;
+  background: var(--card-strong);
+}
+
+.post-meta {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 14px;
+}
+
+.post-meta span {
+  padding: 5px 9px;
+  border-radius: 999px;
+  color: var(--muted);
+  background: rgba(255, 255, 255, 0.07);
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.post-card h3 {
+  margin-bottom: 10px;
+  font-size: 1.28rem;
+  line-height: 1.18;
+}
+
+.sidebar {
+  position: sticky;
+  top: 96px;
+  display: grid;
+  gap: 18px;
+}
+
+.side-card {
+  padding: 22px;
+  border-radius: 22px;
+}
+
+.side-card h2 {
+  margin-bottom: 14px;
+  font-size: 1.1rem;
+}
+
+.side-card a {
+  display: block;
+  padding: 10px 0;
+  color: var(--muted);
+  border-bottom: 1px solid var(--line);
+}
+
+.side-card a:hover {
+  color: var(--accent);
+}
+
+.search-box,
+.newsletter-form {
+  display: grid;
+  gap: 10px;
+}
+
+input {
+  width: 100%;
+  min-height: 44px;
+  padding: 0 13px;
+  color: var(--text);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  outline: none;
+  background: rgba(0, 0, 0, 0.22);
+}
+
+input:focus {
+  border-color: rgba(244, 201, 93, 0.7);
+}
+
+button {
+  min-height: 42px;
+  border-radius: 14px;
+  color: #111111;
+  background: var(--accent);
+  font-weight: 800;
+}
+
+.about-section {
+  margin-bottom: 70px;
+  padding: 34px;
+  border-radius: var(--radius);
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 30px;
+  align-items: start;
+}
+
+code {
+  padding: 2px 6px;
+  border-radius: 7px;
+  color: var(--accent);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.site-footer {
+  border-top: 1px solid var(--line);
+  background: rgba(0, 0, 0, 0.24);
+}
+
+.footer-inner {
+  width: min(var(--max-width), calc(100% - 32px));
+  min-height: 92px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  color: var(--muted);
+}
+
+.footer-links {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.footer-links a:hover {
+  color: var(--accent);
+}
+
+@media (max-width: 880px) {
+  .navbar,
+  .footer-inner {
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
+    padding: 14px 0;
+  }
+
+  .nav-links {
+    justify-content: flex-start;
+  }
+
+  .hero,
+  .content-grid,
+  .about-section {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    min-height: auto;
+    padding-top: 56px;
+  }
+
+  .sidebar {
+    position: static;
+  }
+}
+
+@media (max-width: 620px) {
+  .section-shell,
+  .navbar,
+  .footer-inner {
+    width: min(100% - 22px, var(--max-width));
+  }
+
+  .post-list {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-card,
+  .post-card,
+  .side-card,
+  .about-section {
+    padding: 20px;
+    border-radius: 18px;
+  }
+}
+/* =========================
+   REDES KENNEL
+========================= */
+
+.socials-row{
+  display:flex;
+  flex-wrap:wrap;
+  gap:16px;
+  align-items:center;
+}
+
+.social-btn{
+  display:flex;
+  align-items:center;
+  gap:14px;
+
+  padding:14px 20px;
+
+  border-radius:18px;
+
+  background:rgba(255,255,255,0.06);
+
+  border:1px solid rgba(255,255,255,0.08);
+
+  transition:0.25s ease;
+
+  color:white;
+
+  font-weight:700;
+
+  min-width:240px;
+}
+
+.social-btn:hover{
+  transform:translateY(-4px);
+  border-color:rgba(255,255,255,0.2);
+}
+
+.facebook:hover{
+  background:#1877f2;
+}
+
+.adiestramiento:hover{
+  background:#4267B2;
+}
+
+.social-icon{
+  width:22px;
+  height:22px;
+  fill:white;
+  flex-shrink:0;
+}
+/* =========================
+   MAPA KENNEL
+========================= */
+
+.map-section{
+  margin-bottom:70px;
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:40px;
+
+  padding:40px;
+
+  border-radius:28px;
+
+  background:rgba(255,255,255,0.04);
+
+  border:1px solid rgba(255,255,255,0.08);
+}
+
+.map-info{
+  max-width:650px;
+}
+
+.map-info h2{
+  font-size:2.5rem;
+  margin-bottom:18px;
+}
+
+.map-info p{
+  color:var(--muted);
+}
+
+/* FROM UIVERSE */
+
+.map-btn-wrapper {
+  --btn-color: #b31217;
+  --text-color: #fff;
+  --land-color: #ffdd9f;
+  --veg-color: #36ad5aa9;
+  --water-color: #b3e3ff;
+  --transition-dur: 0.3s;
+
+  position: relative;
+  display: flex;
+
+  font-size: 16px;
+  font-family: "Inter", sans-serif;
+
+  user-select: none;
+  overflow: hidden;
+  border-radius: 50ch;
+
+  box-shadow:
+    0px -1px 2px rgba(3, 7, 18, 0.005),
+    0px -5px 6px rgba(3, 7, 18, 0.009),
+    0px -12px 12px rgba(3, 7, 18, 0.015),
+    0px -20px 22px rgba(3, 7, 18, 0.02),
+    0px -32px 32px rgba(3, 7, 18, 0.06);
+
+  transition: transform var(--transition-dur) ease;
+}
+
+.map-btn {
+  cursor: pointer;
+  padding: 1em 1.5em 1em 3.5em;
+
+  border-radius: 50ch;
+
+  background-color: var(--btn-color);
+
+  font-weight: 700;
+  color: var(--text-color);
+
+  transition:
+    color var(--transition-dur) ease-in-out,
+    background-color var(--transition-dur) ease-in-out;
+}
+
+.pinpoint {
+  pointer-events: none;
+  position: absolute;
+  height: 60%;
+  aspect-ratio: 1;
+  top: 20%;
+  left: 0.75em;
+
+  border-radius: 50% 50% 50% 50%;
+  background-color: var(--text-color);
+
+  transform: rotateZ(45deg);
+
+  mask-image: radial-gradient(circle at center, #0000 0%, #0000 32%, #fff 36%);
+
+  z-index: 1;
+}
+
+.map-container {
+  pointer-events: none;
+
+  position: absolute;
+
+  left: 0px;
+  top: 115px;
+
+  perspective: 120px;
+
+  transform: perspective(120px) rotateX(35deg) scaleX(0);
+
+  transform-origin: 3em 0.5em;
+
+  transition:
+    transform var(--transition-dur) ease-in-out,
+    opacity var(--transition-dur) ease-in-out;
+
+  opacity: 0;
+
+  z-index: 0;
+}
+
+.map {
+  position: absolute;
+  bottom: 100px;
+
+  width: 120px;
+  height: 200px;
+
+  background-color: var(--water-color);
+
+  background-image: linear-gradient(to bottom, #fff2, 30%, #0000);
+
+  transform-origin: left bottom;
+}
+
+.map::after {
+  content: "";
+
+  top: -40;
+  left: 12;
+
+  width: 100%;
+  height: 200%;
+
+  background-color: var(--land-color);
+
+  position: absolute;
+
+  filter: url(#land);
+
+  box-shadow: inset 0 0 48px 24px var(--veg-color);
+
+  z-index: 0;
+}
+
+.fold-1,
+.fold-2,
+.fold-3,
+.fold-4 {
+  mask-image: linear-gradient(to top, #fff, 97%, #0000);
+
+  overflow: hidden;
+}
+
+.fold-1 {
+  left: -60px;
+  transform: rotateY(10deg) translateZ(30px);
+}
+
+.fold-2 {
+  left: 60px;
+  transform: rotateY(-10deg) translateZ(10px);
+}
+
+.fold-3 {
+  left: -169px;
+  transform: rotateY(-15deg) translateZ(-1px);
+}
+
+.fold-4 {
+  left: 166px;
+  transform: rotateY(15deg) translateZ(31px);
+}
+
+.map-btn-wrapper:hover {
+  transform: scale(1.05);
+}
+
+.map-btn-wrapper:hover .map-btn {
+  background:white;
+  color:#111;
+}
+
+.map-btn-wrapper:hover .pinpoint {
+  background-color: var(--btn-color);
+
+  border-radius: 50% 50% 0 50%;
+
+  transform: rotateZ(45deg) translate(-0.3em, -0.3em);
+}
+
+.map-btn-wrapper:hover .map-container {
+  transform: perspective(100px) rotateX(35deg) scaleX(0.85);
+
+  opacity: 1;
+}
+
+@media(max-width:900px){
+
+  .map-section{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+
+}
+.logo-mark{
+  width:54px;
+  height:54px;
+  border-radius:50%;
+  overflow:hidden;
+  background:transparent;
+  box-shadow:none;
+}
+
+.logo-mark img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  padding:0;
+  border-radius:50%;
+}
+/* FONDO CON FOTO EN INDEX + DEGRADADO A NEGRO */
+
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  z-index:-2;
+
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(0,0,0,0.55) 0%,
+      rgba(0,0,0,0.55) 45%,
+      rgba(17,17,17,0.95) 78%,
+      #111111 100%
+    ),
+    url("https://github.com/MatiasH2804/Kennel-Club-Santa-Fe-Web/blob/main/image.png?raw=true");
+
+  background-size:cover;
+  background-position:center top;
+  background-repeat:no-repeat;
+  background-attachment:fixed;
+}
+
+.page-bg{
+  background-image:
+    linear-gradient(
+      to bottom,
+      rgba(17,17,17,0.05) 0%,
+      rgba(17,17,17,0.55) 55%,
+      #111111 100%
+    ),
+    radial-gradient(circle at top left, rgba(244, 93, 93, 0.14), transparent 34%),
+    linear-gradient(32deg, rgba(8, 8, 8, 0.55) 30px, transparent);
+
+  background-color:transparent;
+}
+.brand-dog{
+  width:54px;
+  height:54px;
+  min-width:54px;
+  border-radius:50%;
+  background:#ffffff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+}
+
+.brand-dog img{
+  width:88%;
+  height:88%;
+  object-fit:contain;
+}
+/* BOTÓN ENTERATE MÁS */
+
+.favorite-button-wrapper{
+  margin-top:28px;
+}
+
+.favorite-container {
+  width:fit-content;
+  background-color: rgb(36, 36, 36);
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 10px 15px 10px 10px;
+  cursor: pointer;
+  user-select: none;
+  border-radius: 10px;
+  box-shadow: rgba(46, 46, 46, 0.2) 0px 8px 24px;
+  color: rgb(255, 255, 255);
+}
+
+#favorite-adiestramiento {
+  display: none;
+}
+
+#favorite-adiestramiento:checked + .favorite-container svg {
+  fill: hsl(0deg 100% 50%);
+  stroke: hsl(0deg 100% 50%);
+  animation: heartButton 1s;
+}
+
+@keyframes heartButton {
+  0% { transform: scale(1); }
+  25% { transform: scale(1.3); }
+  50% { transform: scale(1); }
+  75% { transform: scale(1.3); }
+  100% { transform: scale(1); }
+}
+
+#favorite-adiestramiento + .favorite-container .action {
+  position: relative;
+  overflow: hidden;
+  display: grid;
+}
+
+#favorite-adiestramiento + .favorite-container .action span {
+  grid-column-start: 1;
+  grid-column-end: 1;
+  grid-row-start: 1;
+  grid-row-end: 1;
+  transition: all 0.5s;
+}
+
+#favorite-adiestramiento + .favorite-container .action span.option-1 {
+  transform: translate(0px, 0%);
+  opacity: 1;
+}
+
+#favorite-adiestramiento:checked + .favorite-container .action span.option-1 {
+  transform: translate(0px, -100%);
+  opacity: 0;
+}
+
+#favorite-adiestramiento + .favorite-container .action span.option-2 {
+  transform: translate(0px, 100%);
+  opacity: 0;
+}
+
+#favorite-adiestramiento:checked + .favorite-container .action span.option-2 {
+  transform: translate(0px, 0%);
+  opacity: 1;
+}
+/* =========================
+   ICONOS SOCIALES UIVERSE FOOTER
+========================= */
+
+.uiverse-social-card {
+  width: fit-content;
+  height: fit-content;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(18px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 18px 22px;
+  gap: 20px;
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.24);
+  border-radius: 18px;
+}
+
+.socialContainer {
+  width: 52px;
+  height: 52px;
+  background-color: rgb(44, 44, 44);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition-duration: .3s;
+}
+
+.containerOne:hover {
+  background-color: #d62976;
+  transition-duration: .3s;
+}
+
+.containerTwo:hover {
+  background-color: #00acee;
+  transition-duration: .3s;
+}
+
+.containerThree:hover {
+  background-color: #0072b1;
+  transition-duration: .3s;
+}
+
+.containerFour:hover {
+  background-color: #128C7E;
+  transition-duration: .3s;
+}
+
+.socialContainer:active {
+  transform: scale(0.9);
+  transition-duration: .3s;
+}
+
+.socialSvg {
+  width: 17px;
+}
+
+.socialSvg path {
+  fill: rgb(255, 255, 255);
+}
+
+.socialContainer:hover .socialSvg {
+  animation: slide-in-top 0.3s both;
+}
+
+@keyframes slide-in-top {
+  0% {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+/* FONDO PÁGINA ADIESTRAMIENTO */
+
+.adiestramiento-page{
+  background:#111111;
+}
+
+.adiestramiento-bg{
+  position:absolute;
+  inset:0;
+  z-index:-2;
+  min-height:180vh;
+
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(0,0,0,0.55) 0%,
+      rgba(0,0,0,0.55) 45%,
+      rgba(17,17,17,0.85) 80%,
+      #111111 100%
+    ),
+    url("https://github.com/MatiasH2804/Kennel-Club-Santa-Fe-Web/blob/main/Fondo%20adiestramiento.jpg?raw=true");
+
+  background-size:100% auto;
+  background-position:center top;
+  background-repeat:no-repeat;
+  background-attachment:scroll;
+}
+
