@@ -106,8 +106,7 @@ img {
   transition: 0.2s ease;
 }
 
-.nav-links a:hover,
-.nav-links .nav-cta {
+.nav-links a:hover {
   color: var(--text);
   background: rgba(255, 255, 255, 0.09);
 }
@@ -163,8 +162,7 @@ h1 {
   margin-top: 30px;
 }
 
-.btn,
-button {
+.btn {
   border: 0;
   cursor: pointer;
   font: inherit;
@@ -234,8 +232,7 @@ button {
   color: var(--muted);
 }
 
-.hero-card a,
-.read-more {
+.hero-card a {
   color: var(--accent);
   font-weight: 800;
 }
@@ -248,11 +245,6 @@ button {
   align-items: start;
 }
 
-.section-heading {
-  margin-bottom: 20px;
-}
-
-.section-heading h2,
 .about-section h2 {
   font-size: clamp(1.8rem, 4vw, 3rem);
   line-height: 1;
@@ -326,35 +318,6 @@ button {
   color: var(--accent);
 }
 
-.search-box,
-.newsletter-form {
-  display: grid;
-  gap: 10px;
-}
-
-input {
-  width: 100%;
-  min-height: 44px;
-  padding: 0 13px;
-  color: var(--text);
-  border: 1px solid var(--line);
-  border-radius: 14px;
-  outline: none;
-  background: rgba(0, 0, 0, 0.22);
-}
-
-input:focus {
-  border-color: rgba(244, 201, 93, 0.7);
-}
-
-button {
-  min-height: 42px;
-  border-radius: 14px;
-  color: #111111;
-  background: var(--accent);
-  font-weight: 800;
-}
-
 .about-section {
   margin-bottom: 70px;
   padding: 34px;
@@ -363,13 +326,6 @@ button {
   grid-template-columns: 0.8fr 1.2fr;
   gap: 30px;
   align-items: start;
-}
-
-code {
-  padding: 2px 6px;
-  border-radius: 7px;
-  color: var(--accent);
-  background: rgba(255, 255, 255, 0.08);
 }
 
 .site-footer {
@@ -386,16 +342,6 @@ code {
   justify-content: space-between;
   gap: 20px;
   color: var(--muted);
-}
-
-.footer-links {
-  display: flex;
-  gap: 16px;
-  flex-wrap: wrap;
-}
-
-.footer-links a:hover {
-  color: var(--accent);
 }
 
 @media (max-width: 880px) {
@@ -447,92 +393,8 @@ code {
   }
 }
 /* =========================
-   REDES KENNEL
+   BOTON MAPA
 ========================= */
-
-.socials-row{
-  display:flex;
-  flex-wrap:wrap;
-  gap:16px;
-  align-items:center;
-}
-
-.social-btn{
-  display:flex;
-  align-items:center;
-  gap:14px;
-
-  padding:14px 20px;
-
-  border-radius:18px;
-
-  background:rgba(255,255,255,0.06);
-
-  border:1px solid rgba(255,255,255,0.08);
-
-  transition:0.25s ease;
-
-  color:white;
-
-  font-weight:700;
-
-  min-width:240px;
-}
-
-.social-btn:hover{
-  transform:translateY(-4px);
-  border-color:rgba(255,255,255,0.2);
-}
-
-.facebook:hover{
-  background:#1877f2;
-}
-
-.adiestramiento:hover{
-  background:#4267B2;
-}
-
-.social-icon{
-  width:22px;
-  height:22px;
-  fill:white;
-  flex-shrink:0;
-}
-/* =========================
-   MAPA KENNEL
-========================= */
-
-.map-section{
-  margin-bottom:70px;
-
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:40px;
-
-  padding:40px;
-
-  border-radius:28px;
-
-  background:rgba(255,255,255,0.04);
-
-  border:1px solid rgba(255,255,255,0.08);
-}
-
-.map-info{
-  max-width:650px;
-}
-
-.map-info h2{
-  font-size:2.5rem;
-  margin-bottom:18px;
-}
-
-.map-info p{
-  color:var(--muted);
-}
-
-/* FROM UIVERSE */
 
 .map-btn-wrapper {
   --btn-color: #b31217;
@@ -705,14 +567,6 @@ code {
   opacity: 1;
 }
 
-@media(max-width:900px){
-
-  .map-section{
-    flex-direction:column;
-    align-items:flex-start;
-  }
-
-}
 .logo-mark{
   width:54px;
   height:54px;
@@ -777,11 +631,25 @@ body::before{
   justify-content:center;
   overflow:hidden;
 }
+.brand-fci{
+  width:54px;
+  height:54px;
+  min-width:54px;
 
-.brand-dog img{
-  width:88%;
-  height:88%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  overflow:hidden;
+
+  background:transparent;
+}
+
+.brand-fci img{
+  width:100%;
+  height:100%;
   object-fit:contain;
+  display:block;
 }
 /* BOTÓN ENTERATE MÁS */
 
@@ -894,16 +762,6 @@ body::before{
   transition-duration: .3s;
 }
 
-.containerThree:hover {
-  background-color: #0072b1;
-  transition-duration: .3s;
-}
-
-.containerFour:hover {
-  background-color: #128C7E;
-  transition-duration: .3s;
-}
-
 .socialContainer:active {
   transform: scale(0.9);
   transition-duration: .3s;
@@ -958,6 +816,31 @@ body::before{
   background-position:center top;
   background-repeat:no-repeat;
   background-attachment:scroll;
+}
+
+.adiestramiento-main{
+  padding:64px 0 80px;
+}
+
+.adiestramiento-hero-card{
+  min-height:calc(100vh - 150px);
+  display:grid;
+  align-items:center;
+  padding:54px 0 34px;
+}
+
+.adiestramiento-grid{
+  display:grid;
+  grid-template-columns:minmax(0, 760px);
+  justify-content:center;
+  margin-top:18px;
+}
+
+.adiestramiento-callout{
+  display:grid;
+  justify-items:center;
+  gap:22px;
+  margin-top:18px;
 }
 /* BOTÓN DORADO CURSOS */
 
@@ -1203,6 +1086,10 @@ body::before{
 
 .agility-section{
   margin-top:34px;
+}
+
+.agility-grid-spaced{
+  margin-top:18px;
 }
 
 .agility-grid{
@@ -1491,144 +1378,6 @@ body::before{
   max-width:700px;
 }
 
-/* BOTÓN MAPA */
-
-.map-btn-wrapper {
-  --btn-color: #b31217;
-  --text-color: #fff;
-  --land-color: #ffdd9f;
-  --veg-color: #36ad5aa9;
-  --water-color: #b3e3ff;
-  --transition-dur: 0.3s;
-
-  position: relative;
-  display: flex;
-
-  font-size: 16px;
-  font-family: "Inter", sans-serif;
-
-  user-select: none;
-  overflow: hidden;
-  border-radius: 50ch;
-
-  transition: transform var(--transition-dur) ease;
-}
-
-.map-btn {
-  cursor: pointer;
-  padding: 1em 1.8em 1em 3.8em;
-
-  border-radius: 50ch;
-
-  background-color: var(--btn-color);
-
-  font-weight: 700;
-  color: var(--text-color);
-
-  transition: 0.3s;
-}
-
-.pinpoint {
-  pointer-events: none;
-  position: absolute;
-  height: 60%;
-  aspect-ratio: 1;
-  top: 20%;
-  left: 0.75em;
-
-  border-radius: 50%;
-  background-color: white;
-
-  transform: rotateZ(45deg);
-
-  mask-image: radial-gradient(
-    circle at center,
-    #0000 0%,
-    #0000 32%,
-    #fff 36%
-  );
-}
-
-.map-container {
-  pointer-events: none;
-
-  position: absolute;
-
-  left: 0;
-  top: 115px;
-
-  perspective: 120px;
-
-  transform: perspective(120px) rotateX(35deg) scaleX(0);
-
-  transform-origin: 3em 0.5em;
-
-  transition: 0.3s;
-
-  opacity: 0;
-}
-
-.map {
-  position: absolute;
-  bottom: 100px;
-
-  width: 120px;
-  height: 200px;
-
-  background-color: var(--water-color);
-
-  transform-origin: left bottom;
-}
-
-.map::after {
-  content: "";
-
-  width: 100%;
-  height: 200%;
-
-  background-color: var(--land-color);
-
-  position: absolute;
-
-  filter: url(#land);
-
-  box-shadow: inset 0 0 48px 24px var(--veg-color);
-}
-
-.fold-1 {
-  left: -60px;
-  transform: rotateY(10deg) translateZ(30px);
-}
-
-.fold-2 {
-  left: 60px;
-  transform: rotateY(-10deg) translateZ(10px);
-}
-
-.fold-3 {
-  left: -169px;
-  transform: rotateY(-15deg) translateZ(-1px);
-}
-
-.fold-4 {
-  left: 166px;
-  transform: rotateY(15deg) translateZ(31px);
-}
-
-.map-btn-wrapper:hover{
-  transform:scale(1.05);
-}
-
-.map-btn-wrapper:hover .map-container{
-  transform: perspective(100px) rotateX(35deg) scaleX(0.85);
-  opacity:1;
-}
-
-.map-btn-wrapper:hover .map-btn{
-  background:white;
-  color:#b31217;
-}
-
 /* GOOGLE MAPS */
 
 .maps-frame{
@@ -1677,4 +1426,121 @@ body::before{
 .eduardo-link:hover{
   color:#ffffff;
   text-shadow:0 0 14px rgba(244,93,93,0.75);
+}
+/* =========================
+   PÁGINA ESTRUCTURA Y BELLEZA
+========================= */
+
+.estructura-page{
+  background:#111111;
+}
+
+.estructura-page::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  z-index:-3;
+
+  background:
+
+    linear-gradient(
+      to bottom,
+      rgba(0,0,0,.42) 0%,
+      rgba(0,0,0,.58) 38%,
+      rgba(17,17,17,.92) 80%,
+      #111111 100%
+    ),
+
+    radial-gradient(
+      circle at top left,
+      rgba(244,93,93,.14),
+      transparent 34%
+    ),
+
+    url("https://github.com/MatiasH2804/Kennel-Club-Santa-Fe-Web/blob/main/Pista%20de%20bezzeza.webp?raw=true");
+
+  background-size:
+    cover,
+    auto,
+    cover;
+
+  background-position:
+    center,
+    center,
+    center top;
+
+  background-repeat:no-repeat;
+
+  background-attachment:fixed;
+}
+.estructura-info-box{
+  margin-top:28px;
+
+  padding:24px;
+
+  border-radius:22px;
+
+  background:rgba(0,0,0,0.34);
+
+  border:1px solid rgba(255,255,255,0.12);
+
+  display:flex;
+  flex-wrap:wrap;
+  gap:14px;
+
+  align-items:center;
+}
+.estructura-info-box h3{
+  width:100%;
+  margin:0 0 8px;
+
+  font-size:1.15rem;
+  color:#ffffff;
+}
+.estructura-info-box a{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+
+  padding:12px 16px;
+
+  border-radius:999px;
+
+  background:rgba(255,255,255,0.09);
+
+  border:1px solid rgba(255,255,255,0.16);
+
+  color:#f2f2f2;
+
+  font-weight:800;
+  font-size:0.92rem;
+
+  transition:0.22s ease;
+
+  min-width:fit-content;
+}
+
+.estructura-info-box a:hover{
+  color:#ffffff;
+  border-color:rgba(244,93,93,0.55);
+  background:rgba(244,93,93,0.16);
+}
+
+.guia-cinofilia-section{
+  margin-top:34px;
+  margin-bottom:70px;
+}
+
+.guia-cinofilia-card{
+  overflow:hidden;
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  background:var(--card);
+  box-shadow:0 24px 70px rgba(0,0,0,.24);
+}
+
+.guia-cinofilia-card img{
+  width:100%;
+  height:auto;
 }
