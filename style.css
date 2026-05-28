@@ -1066,3 +1066,592 @@ body::before{
 
   margin-bottom:28px;
 }
+/* =========================
+   PÁGINA AGILITY
+========================= */
+
+.agility-page{
+  background:#111111;
+}
+
+.agility-page::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  z-index:-3;
+
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(0,0,0,.62) 0%,
+      rgba(0,0,0,.68) 42%,
+      rgba(17,17,17,.94) 78%,
+      #111111 100%
+    ),
+    radial-gradient(
+      circle at top left,
+      rgba(244,93,93,.20),
+      transparent 34%
+    ),
+    url("https://github.com/MatiasH2804/Kennel-Club-Santa-Fe-Web/blob/main/Agility%20Argentina.png?raw=true");
+
+ background-size:cover, auto, min(1100px, 110vw) auto;
+  background-position:center, center, center top;
+  background-repeat:no-repeat;
+  background-attachment:fixed;
+}
+
+.agility-main{
+  padding:64px 0 80px;
+}
+
+.agility-hero{
+  min-height:calc(100vh - 120px);
+  display:grid;
+  grid-template-columns:minmax(0,1.15fr) minmax(320px,.85fr);
+  gap:28px;
+  align-items:center;
+  padding:54px 0 50px;
+}
+
+.agility-hero-panel,
+.agility-summary-panel,
+.agility-card,
+.agility-wide-card,
+.agility-note{
+  border:1px solid var(--line);
+  background:var(--card);
+  box-shadow:0 24px 70px rgba(0,0,0,.24);
+  backdrop-filter:blur(18px);
+  border-radius:var(--radius);
+}
+
+.agility-hero-panel{
+  padding:42px;
+}
+
+.agility-summary-panel{
+  padding:28px;
+}
+
+.agility-hero h1{
+  max-width:900px;
+  margin-bottom:22px;
+  font-size:clamp(2.35rem,6vw,5.2rem);
+  line-height:1.12;
+  letter-spacing:-.07em;
+}
+
+.agility-hero h2,
+.agility-wide-card h2,
+.agility-card h2,
+.agility-note h2{
+  font-size:clamp(1.6rem,3vw,2.7rem);
+  line-height:1.08;
+  letter-spacing:-.05em;
+  margin-bottom:16px;
+}
+
+.agility-card h3{
+  font-size:1.18rem;
+  line-height:1.18;
+  margin-bottom:10px;
+}
+
+.agility-actions{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+  margin-top:30px;
+}
+
+.quick-list{
+  display:grid;
+  gap:12px;
+  margin-top:20px;
+}
+
+.quick-row{
+  display:flex;
+  justify-content:space-between;
+  gap:18px;
+  padding:14px 0;
+  border-bottom:1px solid var(--line);
+}
+
+.quick-row strong{
+  color:#fff;
+  font-size:.96rem;
+}
+
+.quick-row span{
+  color:var(--muted);
+  font-size:.92rem;
+  text-align:right;
+}
+
+.agility-section{
+  margin-top:34px;
+}
+
+.agility-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:18px;
+}
+
+.agility-card{
+  padding:26px;
+}
+
+.agility-card ul{
+  margin:12px 0 0;
+  padding-left:20px;
+  color:var(--muted);
+}
+
+.agility-card li{
+  margin-bottom:8px;
+}
+
+.agility-wide-card{
+  padding:32px;
+  margin-top:18px;
+}
+
+.badge-row{
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+  margin-bottom:16px;
+}
+
+.badge{
+  padding:6px 10px;
+  border-radius:999px;
+  color:#d7d7d7;
+  background:rgba(255,255,255,.07);
+  font-size:.78rem;
+  font-weight:800;
+}
+
+.agility-categories{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:12px;
+  margin-top:16px;
+}
+
+.category-box{
+  padding:18px;
+  border-radius:18px;
+  background:rgba(255,255,255,.055);
+  border:1px solid rgba(255,255,255,.08);
+}
+
+.category-box strong{
+  display:block;
+  margin-bottom:6px;
+  color:#fff;
+}
+
+.category-box span{
+  color:var(--muted);
+  font-size:.92rem;
+}
+
+.agility-note{
+  padding:30px;
+  margin-top:18px;
+  background:
+    linear-gradient(
+      135deg,
+      rgba(244,93,93,.18),
+      rgba(255,255,255,.05)
+    );
+}
+
+.contact-pill{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:44px;
+  padding:0 16px;
+  margin-top:10px;
+  border-radius:999px;
+  color:#fff;
+  background:rgba(255,255,255,.09);
+  border:1px solid var(--line);
+  font-weight:800;
+}
+
+@media(max-width:900px){
+
+  .agility-hero,
+  .agility-grid,
+  .agility-categories{
+    grid-template-columns:1fr;
+  }
+
+  .agility-hero{
+    min-height:auto;
+  }
+
+  .agility-hero-panel,
+  .agility-summary-panel,
+  .agility-wide-card,
+  .agility-note{
+    padding:22px;
+  }
+
+}
+/* =========================
+   IMAGEN FINAL AGILITY
+========================= */
+
+.agility-final-photo{
+  min-height:620px;
+
+  margin-top:70px;
+  margin-bottom:40px;
+
+  border-radius:32px;
+
+  overflow:hidden;
+
+  border:1px solid rgba(255,255,255,0.12);
+
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(0,0,0,0.25) 0%,
+      rgba(0,0,0,0.45) 45%,
+      rgba(17,17,17,0.95) 100%
+    ),
+    url("https://www.ladridos.es/images/Agosto2024/entrevistaAgosto2024.jpg");
+
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
+
+  display:flex;
+  align-items:flex-end;
+}
+
+.agility-final-overlay{
+  width:100%;
+
+  padding:48px;
+
+  background:
+    linear-gradient(
+      to top,
+      rgba(0,0,0,0.78),
+      rgba(0,0,0,0)
+    );
+}
+
+.agility-final-overlay h2{
+  max-width:760px;
+
+  margin:0;
+
+  font-size:clamp(2rem, 5vw, 4.2rem);
+  line-height:1.05;
+  letter-spacing:-0.06em;
+}
+
+@media(max-width:700px){
+
+  .agility-final-photo{
+    min-height:440px;
+  }
+
+  .agility-final-overlay{
+    padding:28px;
+  }
+
+}
+/* LOGO AGILITY ARGENTINA EN HEADER */
+
+.brand-agility{
+  width:54px;
+  height:54px;
+  min-width:54px;
+  border-radius:50%;
+  background:#ffffff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+}
+
+.brand-agility img{
+  width:88%;
+  height:88%;
+  object-fit:contain;
+}
+
+/* =========================
+   ACCESOS FINALES AGILITY
+========================= */
+
+.agility-bottom-actions{
+  margin-top:70px;
+  margin-bottom:60px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:24px;
+  flex-wrap:wrap;
+}
+
+.gold-btn-reglamento{
+  width:360px;
+  margin:0;
+}
+
+.gold-btn-reglamento::before{
+  content:"Si querés saber más sobre el reglamento";
+}
+/* =========================
+   PÁGINA UBICACIÓN
+========================= */
+
+.ubicacion-page{
+  background:#0b0b0b;
+}
+
+.ubicacion-page::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  z-index:-3;
+
+  background-image:
+    radial-gradient(
+      circle at top left,
+      rgba(179,18,23,0.22),
+      transparent 28%
+    ),
+    linear-gradient(
+      0deg,
+      rgba(255,255,255,0.03) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(255,255,255,0.03) 1px,
+      transparent 1px
+    );
+
+  background-size:
+    auto,
+    80px 80px,
+    80px 80px;
+}
+
+.wrapper{
+  width:min(1200px, calc(100% - 40px));
+  margin:auto;
+  padding:80px 0;
+}
+
+.location-card{
+  background:rgba(255,255,255,0.04);
+  border:1px solid rgba(255,255,255,0.08);
+  border-radius:34px;
+  padding:45px;
+  backdrop-filter:blur(20px);
+
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:40px;
+
+  margin-bottom:40px;
+}
+
+.location-card p{
+  color:#c7c7c7;
+  font-size:1.15rem;
+  margin-bottom:16px;
+  max-width:700px;
+}
+
+/* BOTÓN MAPA */
+
+.map-btn-wrapper {
+  --btn-color: #b31217;
+  --text-color: #fff;
+  --land-color: #ffdd9f;
+  --veg-color: #36ad5aa9;
+  --water-color: #b3e3ff;
+  --transition-dur: 0.3s;
+
+  position: relative;
+  display: flex;
+
+  font-size: 16px;
+  font-family: "Inter", sans-serif;
+
+  user-select: none;
+  overflow: hidden;
+  border-radius: 50ch;
+
+  transition: transform var(--transition-dur) ease;
+}
+
+.map-btn {
+  cursor: pointer;
+  padding: 1em 1.8em 1em 3.8em;
+
+  border-radius: 50ch;
+
+  background-color: var(--btn-color);
+
+  font-weight: 700;
+  color: var(--text-color);
+
+  transition: 0.3s;
+}
+
+.pinpoint {
+  pointer-events: none;
+  position: absolute;
+  height: 60%;
+  aspect-ratio: 1;
+  top: 20%;
+  left: 0.75em;
+
+  border-radius: 50%;
+  background-color: white;
+
+  transform: rotateZ(45deg);
+
+  mask-image: radial-gradient(
+    circle at center,
+    #0000 0%,
+    #0000 32%,
+    #fff 36%
+  );
+}
+
+.map-container {
+  pointer-events: none;
+
+  position: absolute;
+
+  left: 0;
+  top: 115px;
+
+  perspective: 120px;
+
+  transform: perspective(120px) rotateX(35deg) scaleX(0);
+
+  transform-origin: 3em 0.5em;
+
+  transition: 0.3s;
+
+  opacity: 0;
+}
+
+.map {
+  position: absolute;
+  bottom: 100px;
+
+  width: 120px;
+  height: 200px;
+
+  background-color: var(--water-color);
+
+  transform-origin: left bottom;
+}
+
+.map::after {
+  content: "";
+
+  width: 100%;
+  height: 200%;
+
+  background-color: var(--land-color);
+
+  position: absolute;
+
+  filter: url(#land);
+
+  box-shadow: inset 0 0 48px 24px var(--veg-color);
+}
+
+.fold-1 {
+  left: -60px;
+  transform: rotateY(10deg) translateZ(30px);
+}
+
+.fold-2 {
+  left: 60px;
+  transform: rotateY(-10deg) translateZ(10px);
+}
+
+.fold-3 {
+  left: -169px;
+  transform: rotateY(-15deg) translateZ(-1px);
+}
+
+.fold-4 {
+  left: 166px;
+  transform: rotateY(15deg) translateZ(31px);
+}
+
+.map-btn-wrapper:hover{
+  transform:scale(1.05);
+}
+
+.map-btn-wrapper:hover .map-container{
+  transform: perspective(100px) rotateX(35deg) scaleX(0.85);
+  opacity:1;
+}
+
+.map-btn-wrapper:hover .map-btn{
+  background:white;
+  color:#b31217;
+}
+
+/* GOOGLE MAPS */
+
+.maps-frame{
+  margin-top:30px;
+
+  overflow:hidden;
+
+  border-radius:34px;
+
+  border:1px solid rgba(255,255,255,0.08);
+
+  background:black;
+}
+
+.maps-frame iframe{
+  width:100%;
+  height:650px;
+  border:none;
+  display:block;
+}
+
+@media(max-width:900px){
+
+  .location-card{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+
+  .location-card h1{
+    font-size:2.6rem;
+  }
+
+  .maps-frame iframe{
+    height:500px;
+  }
+
+}
