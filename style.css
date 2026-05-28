@@ -1083,21 +1083,32 @@ body::before{
   background:
     linear-gradient(
       to bottom,
-      rgba(0,0,0,.62) 0%,
-      rgba(0,0,0,.68) 42%,
-      rgba(17,17,17,.94) 78%,
+      rgba(0,0,0,.50) 0%,
+      rgba(0,0,0,.62) 38%,
+      rgba(17,17,17,.92) 78%,
       #111111 100%
     ),
+
     radial-gradient(
       circle at top left,
-      rgba(244,93,93,.20),
+      rgba(244,93,93,.14),
       transparent 34%
     ),
-    url("https://github.com/MatiasH2804/Kennel-Club-Santa-Fe-Web/blob/main/Agility%20Argentina.png?raw=true");
 
- background-size:cover, auto, min(1100px, 110vw) auto;
-  background-position:center, center, center top;
+    url("https://github.com/MatiasH2804/Kennel-Club-Santa-Fe-Web/blob/main/Fondo%20Agility.png?raw=true");
+
+  background-size:
+    cover,
+    auto,
+    cover;
+
+  background-position:
+    center,
+    center,
+    center top;
+
   background-repeat:no-repeat;
+
   background-attachment:fixed;
 }
 
@@ -1654,4 +1665,16 @@ body::before{
     height:500px;
   }
 
+}
+.eduardo-link{
+  color:#a8a7a7;
+  font-weight:800;
+  text-decoration:none;
+
+  transition:0.25s ease;
+}
+
+.eduardo-link:hover{
+  color:#ffffff;
+  text-shadow:0 0 14px rgba(244,93,93,0.75);
 }
